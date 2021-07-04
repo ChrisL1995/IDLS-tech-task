@@ -1,0 +1,37 @@
+.puzzleBoard {
+    height: 200px;
+    width: 400px;
+    border: 3px solid black;
+    margin-bottom: 5px;
+    overflow: hidden;
+    display: block;
+}
+
+/* Creates box-like shape for slot */
+.slot {
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    position: relative;
+    left: 50px;
+    top: 50px;
+    margin: 5px;
+    display: inline-block;
+}
+
+
+.shape {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    position: relative;
+    left: 50px;
+    top: 50px;
+    flex-direction: row;
+    margin: 5px;
+}
+
+
+.image-list {
+    display: flex;
+}

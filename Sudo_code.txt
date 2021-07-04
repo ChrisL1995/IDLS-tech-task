@@ -1,0 +1,31 @@
+SUDO:
+
+create 2 puzzleboxes:
+Store class in divider -> <div class="puzzlebox"></div>
+	(Make puzzlebox using a class)
+		class Puzzleboard {
+			define variables...
+			}  (additional info given in figure 1)
+
+create 5 containers within each box:
+	for bottom puzzlebox:
+		- Create list of images in ts file (star)
+		- call list in html <div cdkDrag *ngFor="for image in images"><img src="{{image}}"></div>
+			Here images would be a list of path strings. so <string[]>?
+		- align images horizontally. (display: inline(-flex/block)?)
+	
+Make list dragabble:
+	- wrap list with dragdroplist.
+	<div cdkDropList>
+		...list...
+	</div>
+	- create droppable function in .ts, link into html via (cdkDropListDropped) ="drop($event)" in cdkDropList
+
+
+Link both lists so you can drag between each one, done in <div cdkDropList>
+	<div cdkDropList
+	[cdkDropListData] = "images"
+	(cdkDropListDropped) = "drop($event)"
+	[cdkDropListConnectedTo] = "otherListName"
+	#thisListName="cdkDropList" (connect this cdkDropList object to the name "thisListName">
+	</div>

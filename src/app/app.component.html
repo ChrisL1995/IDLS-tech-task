@@ -1,0 +1,37 @@
+
+
+<!---First Puzzle Board--->>
+<div class="puzzleBoard">
+    <!---defining drag and drop list-->
+    <!---contains elements which reference data and links puzzleboards--->
+    <div cdkDropList
+    [cdkDropListData]="imList"
+    class="image-list" 
+    #puzzleBoard1="cdkDropList" 
+    cdkDropListOrientation="horizontal" 
+    (cdkDropListDropped) = "drop($event)"
+    [cdkDropListConnectedTo]="puzzleBoard2">
+        <!---Create several container shapes--->
+        <div cdkDrag class="slot" *ngFor= "let num of imList"></div>
+    </div>
+</div>
+
+
+<!---Second puzzleboard containing stars--->
+<div class="puzzleBoard">
+    <!---defining drag and drop list-->
+    <div cdkDropList 
+    [cdkDropListData]="imList"
+    class="image-list"
+    #puzzleBoard2="cdkDropList"
+    cdkDropListOrientation="horizontal" 
+    (cdkDropListDropped) = "drop($event)"
+    [cdkDropListConnectedTo]="puzzleBoard1">
+    <!---Create array of star shapes--->
+        <img cdkDrag *ngFor="let num of imList" src="/assets/images/star.png" class = "shape"> <!---Creates 5 star images--->
+    </div> 
+</div>
+
+
+<router-outlet></router-outlet>
+
